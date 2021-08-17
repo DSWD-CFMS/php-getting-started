@@ -41,7 +41,7 @@ $app->get('/version', function() use($app) {
 
    $files = glob('app/*apk')[0];
 
-   return $files;
+   return json_encode(['fileName'=>$files,'path'=>'https://github.com/DSWD-CFMS/php-getting-started/blob/main/web/'.$files]);
 
 });
 $app->run();
