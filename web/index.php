@@ -29,7 +29,13 @@ $app->get('/cowsay', function() use($app) {
   return "<pre>".\Cowsayphp\Cow::say("Cool beans")."</pre>";
 });
 
-$app->get('/sample', function() use($app) {
-  return 'HELLO';
+$app->get('/version', function() use($app) {
+  if ($handle = opendir('uploads')) {
+      $version = "";
+      while (false !== ($entry = readdir($handle))) { $version = $entry; }
+      closedir($handle);
+
+      echo json_encode($version);
+  }
 });
 $app->run();
