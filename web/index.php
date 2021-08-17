@@ -30,7 +30,9 @@ $app->get('/cowsay', function() use($app) {
 });
 
 $app->get('/version', function() use($app) {
-  if ($handle = opendir('uploads')) {
+
+  
+  if ($handle = opendir(__DIR__.'/uploads')) {
       $version = "";
       while (false !== ($entry = readdir($handle))) { $version = $entry; }
       closedir($handle);
