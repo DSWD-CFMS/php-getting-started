@@ -35,7 +35,7 @@ $app->get('/version', function() use($app) {
       while (false !== ($entry = readdir($handle))) { $version = $entry; }
       closedir($handle);
 
-      echo json_encode($version);
+      return json_encode($version);
   }
 });
 $app->run();
