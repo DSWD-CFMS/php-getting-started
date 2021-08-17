@@ -41,6 +41,7 @@ $app->get('/version', function() use($app) {
 
    $files = glob('app/*apk')[0];
 
+   return $files;
 
 });
 $app->run();
