@@ -36,7 +36,7 @@ $app->get('/version', function() use($app) {
       while (false !== ($entry = readdir($handle))) { $version = $entry; }
       closedir($handle);
 
-      return 'app'; 
+      return 'x'; 
   }
 });
 $app->run();
