@@ -31,12 +31,16 @@ $app->get('/cowsay', function() use($app) {
 
 $app->get('/version', function() use($app) {
 
-  if ($handle = opendir('app_verison')) {
-      $version = "";
-      while (false !== ($entry = readdir($handle))) { $version = $entry; }
-      closedir($handle);
+  // if ($handle = opendir('app')) {
+  //     $version = "";
+  //     while (false !== ($entry = readdir($handle))) { $version = $entry; }
+  //     closedir($handle);
 
-      return $version; 
-  }
+  //     return $version; 
+  // }
+
+   $files = glob('app/*apk')[0];
+
+
 });
 $app->run();
